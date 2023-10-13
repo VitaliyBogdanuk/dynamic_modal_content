@@ -1,0 +1,188 @@
+/*
+ Thumbnails classic
+ */
+.thumbnail-classic {
+	position: relative;
+	overflow: hidden;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.thumbnail-classic:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(240, 59, 144, 0.55);
+	transition: 0.3s all ease;
+}
+
+.thumbnail-classic .icon {
+	color: #ffffff;
+}
+
+.thumbnail-classic .icon:hover {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+@media (min-width: 576px) {
+	.thumbnail-classic {
+		max-width: none;
+	}
+}
+
+.thumbnail-classic-img-link {
+	font-size: 50px;
+}
+
+.thumbnail-classic-img-link img {
+	display: none;
+}
+
+.thumbnail-classic-caption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	transition: 0.3s all ease;
+}
+
+.thumbnail-classic-img {
+	transition: 0.5s all ease;
+	width: 100%;
+	object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+	.desktop .thumbnail-classic:after {
+		opacity: 0;
+		background: rgba(240, 59, 144, 0.75);
+	}
+
+	.desktop .thumbnail-classic:hover:after {
+		opacity: 1;
+	}
+
+	.desktop .thumbnail-classic:hover .thumbnail-classic-img {
+		transform: scale(1.2);
+	}
+
+	.desktop .thumbnail-classic:hover .thumbnail-classic-caption {
+		opacity: 1;
+	}
+
+	.desktop .thumbnail-classic-caption {
+		opacity: 0;
+	}
+
+	.thumbnail-classic-img-link {
+		font-size: 80px;
+	}
+}
+
+/*
+ Thummbnail simple
+ */
+.thumbnail-simple-title {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #404040;
+}
+
+.thumbnail-simple-img {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+*+.thumbnail-simple-title {
+	margin-top: 12px;
+}
+
+@media (min-width: 992px) {
+	*+.thumbnail-simple-title {
+		margin-top: 47px;
+	}
+}
+
+/*
+ Thumbnails classic
+ */
+.thumbnail-coach.thumbnail-classic {
+	width: 187px;
+	height: 187px;
+	overflow: hidden;
+	border-radius: 0;
+}
+
+.thumbnail-coach .thumbnail-classic-img {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.thumbnail-coach.thumbnail-classic:after {
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 0;
+	background: rgba(137, 200, 64, 0.5);
+}
+
+.thumbnail-coach.thumbnail-classic:hover .thumbnail-classic-img {
+	transform: none;
+}
+
+.thumbnail-coach.thumbnail-classic:hover:after {
+	opacity: 1;
+}
+
+.thumbnail-coach.thumbnail-classic:hover .thumbnail-classic-caption {
+	opacity: 1;
+}
+
+.thumbnail-coach .thumbnail-classic-caption {
+	opacity: 1;
+}
+
+#ourTeamSection .thumbnail-classic-caption {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: auto;
+	transform: none;
+	z-index: 1;
+	transition: none;
+}
+
+#ourTeamSection .thumbnail-classic .icon {
+	color: #182220;
+}
+
+#ourTeamSection .thumbnail-coach.thumbnail-classic:after {
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 0;
+	background: transparent;
+}
+
+#ourTeamSection .thumbnail-coach.thumbnail-classic:hover .thumbnail-classic-img {
+	transform: none;
+}
+
+#ourTeamSection .thumbnail-coach.thumbnail-classic:hover:after {
+	opacity: 1;
+}
+
+#ourTeamSection .thumbnail-coach.thumbnail-classic:hover .thumbnail-classic-caption {
+	opacity: 1;
+}
+
+#ourTeamSection .thumbnail-coach .thumbnail-classic-caption {
+	opacity: 1;
+}
+
+#ourTeamSection .icon-lg {
+	font-size: 50px;
+}

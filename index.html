@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="uk">
+
+<head>
+  <title>Dynamic modal content</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style-v4.css">
+</head>
+<body>
+    <section class="section section-6 bg-default text-center" id="ourTeamSection">
+      <div class="container">
+        <h2>Наші тренери</h2>
+        <div class="row row-offset-3 row-30 row-sm-50">
+          <!-- Trigger the modal with a button -->
+          <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="thumbnail-classic thumbnail-coach">
+              <img class="thumbnail-classic-img" src="images/coach-team-1-904x904.jpg" alt="" width="187"
+                height="187" />
+              <div class="thumbnail-classic-caption">
+                <div class="group-sm">
+                  <a class="icon novi-icon icon-circle icon-lg fl-fill-round-icons-search71 openBtn" href="#"
+                    data-component="coach1"></a>
+                </div>
+              </div>
+            </div>
+            <h5 class="thumbnail-simple-title">
+              <a class="icon icon-sm-1 icon-gray-1 fa fa-instagram" target="_blank"
+                href="https://www.instagram.com/lapchevskaya_d/">
+                <span class="coach-font-family">Діана Лапчевська</span>
+              </a>
+            </h5>
+          </div>
+          <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay="0.4s">
+            <div class="thumbnail-classic thumbnail-coach">
+              <img class="thumbnail-classic-img" src="images/coach-team-3-904x904.jpg" alt="" width="187"
+                height="187" />
+              <div class="thumbnail-classic-caption">
+                <div class="group-sm">
+                  <a class="icon novi-icon icon-circle icon-lg fl-fill-round-icons-search71 openBtn" href="#"
+                    data-component="coach3"></a>
+                </div>
+              </div>
+            </div>
+            <h5 class="thumbnail-simple-title">
+              <a class="icon icon-sm-1 icon-gray-1 fa fa-instagram" target="_blank"
+                href="https://www.instagram.com/karolina_coach/">
+                <span class="coach-font-family">Кароліна Дяченко</span>
+              </a>
+            </h5>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-4 wow fadeInRight" data-wow-delay="0.4s">
+            <div class="thumbnail-classic thumbnail-coach">
+              <img class="thumbnail-classic-img" src="images/coach-team-2-904x904.jpg" alt="" width="187"
+                height="187" />
+              <div class="thumbnail-classic-caption">
+                <div class="group-sm">
+                  <a class="icon novi-icon icon-circle icon-lg fl-fill-round-icons-search71 openBtn" href="#"
+                    data-component="coach2"></a>
+                </div>
+              </div>
+            </div>
+            <h5 class="thumbnail-simple-title">
+              <a class="icon icon-sm-1 icon-gray-1 fa fa-instagram" target="_blank"
+                href="https://www.instagram.com/lenka.malinka/">
+                <span class="coach-font-family">Олена Малініна</span>
+              </a>
+            </h5>
+          </div>
+        </div>
+        <div class="row row-offset-3 row-30 row-sm-50">
+          <div class="col-sm-6 col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="thumbnail-classic thumbnail-coach">
+              <img class="thumbnail-classic-img" src="images/coach-team-4-904x904.jpg" alt="" width="187"
+                height="187" />
+              <div class="thumbnail-classic-caption">
+                <div class="group-sm">
+                  <a class="icon novi-icon icon-circle icon-lg fl-fill-round-icons-search71 openBtn" href="#"
+                    data-component="coach4"></a>
+                </div>
+              </div>
+            </div>
+            <h5 class="thumbnail-simple-title">
+              <a class="icon icon-sm-1 icon-gray-1 fa fa-instagram" target="_blank"
+                href="https://www.instagram.com/liora.kras/">
+                <span class="coach-font-family">Таїса Красніцька</span>
+              </a>
+            </h5>
+          </div>
+          <div class="col-sm-6 col-lg-6 wow fadeInLeft" data-wow-delay="0.4s">
+            <div class="thumbnail-classic thumbnail-coach">
+              <img class="thumbnail-classic-img" src="images/coach-team-5-904x904.jpg" alt="" width="187"
+                height="187" />
+              <div class="thumbnail-classic-caption">
+                <div class="group-sm">
+                  <a class="icon novi-icon icon-circle icon-lg fl-fill-round-icons-search71 openBtn" href="#"
+                    data-component="coach5"></a>
+                </div>
+              </div>
+            </div>
+            <h5 class="thumbnail-simple-title">
+              <a class="icon icon-sm-1 icon-gray-1 fa fa-instagram" target="_blank"
+                href="https://www.instagram.com/p/CpBZuSqtoDX/?utm_source=ig_web_copy_link">
+                <span class="coach-font-family">Сергій Мельник</span>
+              </a>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/core.min.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $('.openBtn').on('click', function (event) {
+        event.preventDefault();
+        let component = $(this).data('component');
+        $('.modal-content').load('components/' + component + '.html', function () {
+          $('#myModal').modal({ show: true, keyboard: true });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
